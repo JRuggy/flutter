@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, annotate_overrides, unused_local_variable
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, annotate_overrides, unused_local_variable, avoid_print, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 
@@ -10,6 +10,10 @@ void main() {
 // void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  void answerQuestion() {
+    print('Answer Chosen');
+  }
+
   @override
   Widget build(BuildContext context) {
     var questions = [
@@ -26,16 +30,18 @@ class MyApp extends StatelessWidget {
           children: [
             Text('The Questions!'),
             ElevatedButton(
-              onPressed: null,
               child: Text('Answer 1'),
+              onPressed: answerQuestion,
             ),
             ElevatedButton(
-              onPressed: null,
               child: Text('Answer 2'),
+              onPressed: () => print('Answer 2 Chosen'),
             ),
             ElevatedButton(
-              onPressed: null,
               child: Text('Answer 3'),
+              onPressed: () {
+                print('Answer 3 Chosen');
+              },
             ),
           ],
         ),
