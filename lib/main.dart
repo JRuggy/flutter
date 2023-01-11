@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         body: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Text('The Questions!'),
+            Text(questions.elementAt(0)),
             ElevatedButton(
               child: Text('Answer 1'),
               onPressed: answerQuestion,
