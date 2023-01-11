@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, annotate_overrides, unused_local_variable, avoid_print, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, annotate_overrides, unused_local_variable, avoid_print, sort_child_properties_last, must_be_immutable
 
 import 'package:flutter/material.dart';
 
@@ -10,8 +10,12 @@ void main() {
 // void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  var questionIndex = 0;
+
   void answerQuestion() {
-    print('Answer Chosen');
+    questionIndex = questionIndex + 1;
+    print(questionIndex);
+    // print('Answer Chosen');
   }
 
   @override
@@ -29,7 +33,11 @@ class MyApp extends StatelessWidget {
         body: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Text(questions.elementAt(0)),
+            // you can either use questions.elementAt(0) or the method below
+            // Text(questions[0]),
+            Text(
+              questions[questionIndex],
+            ),
             ElevatedButton(
               child: Text('Answer 1'),
               onPressed: () {
